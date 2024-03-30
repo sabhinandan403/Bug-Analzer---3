@@ -1,0 +1,99 @@
+/**
+ * Project Name : Bug Analyzer
+ * @Project Bug Analyzer
+ * @author  Yash Pathak
+ * @date    Jan 19, 2024 
+ * 
+ * Module: CSS File
+ * Description
+ * ----------------------------------------------------------------------------------- 
+ * Al the css for Navbar is  defined in this file.
+ * 
+ * -----------------------------------------------------------------------------------
+ * 
+ * Revision History
+ * -----------------------------------------------------------------------------------
+ * Modified By          Modified On         Description
+ * Yash Pathak          Jan 19, 2024      Initially Created
+ * -----------------------------------------------------------------------------------
+ */
+
+.navbar {
+    background-color: #12397b; /* Light blue color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px;
+  }
+
+  .navbar-heading {
+    color: white; /* Text color */
+    font-size: 24px;
+    margin: 0;
+    padding: 5px;
+  }
+
+  .add-bug-button {
+    position: relative;
+    background-color: #12397b;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    margin-left: 1200px;
+    overflow: hidden;
+    border-bottom: 2px solid white;
+  }
+  
+  .add-bug-button:hover {
+    color: rgb(246, 108, 59);
+    text-decoration: none; 
+  } 
+  
+  .add-bug-button::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(246, 108, 59);
+    transition: width 2s ease;
+  }
+  
+  .add-bug-button:hover::before {
+    width: 100%;
+    background-color: rgb(246, 108, 59);
+  }
+
+  .bug-button {
+    position: relative;
+    background-color: #12397b;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    margin-left: 1200px;
+    overflow: hidden;
+  }
+  
+  .bug-button:hover {
+    color: rgb(246, 108, 59);
+    text-decoration: none; 
+  } 
+  
+  .bug-button::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(246, 108, 59);
+    transition: width 2s ease;
+  }
+  
+  .bug-button:hover::before {
+    width: 100%;
+    background-color: rgb(246, 108, 59);
+  }

@@ -1,0 +1,42 @@
+doctype html
+html(lang="en")
+
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css")
+    script(src="https://code.jquery.com/jquery-3.7.0.js")
+    script(src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
+    link(rel="stylesheet", href="./css/ProjectBugs.css")
+    link(rel="stylesheet", href="./css/Navbar.css")
+
+  body
+
+    .navbar
+      .navbar-heading
+        i.fas.fa-bug.bug-icon= language.bug_analyzer
+
+      div
+        a#export-button.bug-button(href="#" title="Export to Excel")
+          i.fas.fa-file-download
+        a.logout-button.bug-button
+          i.fas.fa-sign-out-alt
+
+    .outer-box
+      h1
+        span A
+        | ssigned 
+        span B
+        | ugs 
+
+      .center-container
+        table#example.display(style="width:100%")
+        
+
+  script(type='text/javascript', charset='utf8', src='https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js')
+  script(type='text/javascript', charset='utf8', src='https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js')
+  link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css")
+  script(src="https://cdn.jsdelivr.net/npm/toastify-js")
+  script(src="https://cdn.jsdelivr.net/npm/sweetalert2@10")
+  script(src="./js/AssignedBugs.js")

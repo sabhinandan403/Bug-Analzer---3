@@ -1,0 +1,45 @@
+doctype html
+html(lang="en")
+
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="./css/AddReview.css")
+    
+    script(src='https://code.jquery.com/jquery-3.6.4.min.js' async)
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js" async)
+  body
+      .navbar
+      .navbar-heading
+        i.fas.fa-bug.bug-icon= language.bug_analyzer
+      a.generate-bug-button(href="./getAllBugsInfo")= language.generate_report
+      a.import-button
+       i.fas.fa-file-upload  IMPORT
+      a.logout-button
+       i.fas.fa-sign-out-alt
+       
+      main#reviewDetail.content.px-3.py-2.d-none
+      .container-fluid
+        .mb-3
+          h4#issue-id
+        // Your Table Element
+        table#reviewDetailTable.table.table-bordered.table-striped
+          thead
+              tr
+                th#issueId(scope='col')(style='background-color:#3c25bf; color:white') Sr. No.
+                th(scope='col')(style='background-color:#3c25bf; color:white') Review Point
+                th(scope='col')(style='background-color:#3c25bf; color:white') Review Status 
+                th(scope='col')(style='background-color:#3c25bf; color:white') Developer Name
+                th(scope='col')(style='background-color:#3c25bf; color:white') Commit Id Before
+                th(scope='col')(style='background-color:#3c25bf; color:white') Commit Id After 
+                th(scope='col')(style='background-color:#3c25bf; color:white') Developer Comment
+                th(scope='col')(style='background-color:#3c25bf; color:white') Modified At
+                th(scope='col')(style='background-color:#3c25bf; color:white') Action
+          tbody
+    script(src="https://code.jquery.com/jquery-3.5.1.min.js")
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css")
+    script(src="https://cdn.jsdelivr.net/npm/toastify-js")
+    script(src="https://cdn.jsdelivr.net/npm/sweetalert2@10")
+    script(src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js")

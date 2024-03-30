@@ -1,0 +1,388 @@
+/**
+ * Project Name : Bug Analyzer
+ * @Project Bug Analyzer
+ * @author  Yash Pathak
+ * @date    Jan 20, 2024 
+ * 
+ * Module: CSS File
+ * Description
+ * ----------------------------------------------------------------------------------- 
+ * Al the css for Project Bugs is  defined in this file.
+ * 
+ * -----------------------------------------------------------------------------------
+ * 
+ * Revision History
+ * -----------------------------------------------------------------------------------
+ * Modified By          Modified On         Description
+ * Yash Pathak          Jan 20, 2024      Initially Created
+ * -----------------------------------------------------------------------------------
+ */
+
+ body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+     /* background-image: url('../images/editbug.png');
+    background-position: center;
+    background-size: cover; */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: #12397b; 
+    color: white; 
+}
+.navbar-heading {
+    color: white; 
+    font-size: 24px;
+    margin: 0;
+    padding: 4px;
+}
+
+
+.navbar .import-button{
+    position: relative;
+    background-color: #12397b;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    overflow: hidden;
+  }
+  
+  .navbar .logout-button{
+    margin-left: 5px !important;
+  }
+  
+  .navbar .generate-bug-button:hover, .navbar .import-button:hover,
+  .navbar .logout-button:hover {
+    color: rgb(246, 108, 59);
+    text-decoration: none; 
+  } 
+  
+  .navbar .generate-bug-button::before,.navbar .import-button::before,
+  .navbar .logout-button::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(246, 108, 59);
+    transition: width 2s ease;
+  }
+  
+  .navbar .generate-bug-button:hover::before,.navbar .import-button:hover::before,
+  .navbar .logout-button:hover::before {
+    width: 100%;
+    background-color: rgb(246, 108, 59);
+  }
+
+  
+
+.bug-button {
+    position: relative;
+    background-color: #12397b;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    margin-left: 1200px;
+    overflow: hidden;
+  }
+  
+  .bug-button:hover {
+    color: rgb(246, 108, 59);
+    text-decoration: none; 
+  } 
+  
+  .bug-button::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(246, 108, 59);
+    transition: width 2s ease;
+  }
+  
+  .bug-button:hover::before {
+    width: 100%;
+    background-color: rgb(246, 108, 59);
+  }
+
+.navbar-heading {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-heading i {
+    margin-right: 5px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    margin-left: 10px; /* Adjust the spacing between anchor tags as needed */
+}
+
+/* Additional styling (you can customize as needed) */
+.add-bug-button:hover {
+    text-decoration: underline;
+}
+
+#example {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#example_wrapper{
+    margin-left: 20px;
+    width: 110%;
+}
+
+#example th,
+#example td {
+    border: 1px solid #000000;
+    /* padding: 10px; */
+
+}
+
+#example_info, #example_paginate{
+    margin-top: 10px;
+}
+
+.paginate_button {
+    padding: 2px;
+}
+
+#example_wrapper .dataTable .sorting{
+    width: 100px !important;
+}
+
+
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+    padding: 5px 10px !important;
+}
+
+#example th {
+    margin-top: 100px;
+    background-color: #12397b;
+    color:aliceblue
+}
+
+/* Style for Details button */
+.details-button {
+    background-color: #12397b;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    align-items: center;
+}
+
+.details-button:hover {
+    background-color: #2f579c;
+}
+
+/* Optional: Add some margin to the button for spacing */
+.details-button-container {
+    margin-top: 10px;
+}
+
+#example_filter{
+    margin-bottom: 10px ;
+    font-size: large;
+}
+/* Outer box styling */
+.outer-box {
+    max-width: 1500px; /* Set the maximum width of the outer box */
+    margin: 20px auto; /* Center the outer box horizontally with top and bottom margin */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    /* background-color: #80B3FF; */
+    margin-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Centered container for DataTable */
+.center-container {
+    height: 60vh;
+    width: 80%;
+    margin-left: 70px;
+    margin-top: 50px;
+}
+h1{
+    margin-top: 40px;
+    text-align: center;
+}
+
+h4{
+    color: #484747;
+}
+
+thead{
+    margin-top: 200px;
+}
+
+.footer {
+    text-align: center;
+    /* background-color: #f2f2f2; */
+    color: rgb(12, 11, 11);
+    margin-top: 15px;
+}
+
+.outer-box h1 {
+    text-transform: uppercase; /* Capitalize each word */
+}
+
+.outer-box h1 span {
+    font-size: 1.3em; /* Adjust the size as needed */
+    font-weight: bold; /* Make the first character of each word bold */
+}
+
+#resetBtn {
+    padding: 5px;
+    font-size: 16px;
+    margin-left: 975px;
+    background-color: #6c757d;
+    border-radius: 2px;
+    border: none;
+    color: rgb(255, 255, 255);
+    margin-top: 30px;
+    transition: background-color 0.3s; /* Adding transition for smooth color change */
+  
+    /* Hover state */
+    &:hover {
+      background-color: #808283; /* Lighter color on hover */
+      cursor: pointer; /* Change cursor to hand icon on hover */
+    }
+  }
+  
+
+  .status-dropdown, .assign-to-dropdown{
+    height: 20px;
+    width: 100%;
+    border-radius: 3px;
+  }
+
+  .status-dropdown{
+    height: 20px;
+  }
+  .save-button{
+    border-radius: 2px;
+    border: none;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    padding: 3px;
+    background-color: #12397b; 
+    &:hover {
+        background-color: #2f579c; /* Lighter color on hover */
+        cursor: pointer; /* Change cursor to hand icon on hover */
+    }
+  }
+
+
+  table.dataTable.display>tbody>tr>td{
+    font-size: 13px;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+
+table.dataTable thead>tr>th.sorting:before{
+    display: none !important;
+}
+
+table.dataTable thead>tr>th.sorting:first-child:before{
+    margin-left: 30px !important;
+    display: inline !important;
+}
+
+table.dataTable thead>tr>th.sorting:after{
+    display: none !important;
+}
+
+table.dataTable thead>tr>th.sorting:first-child:after{
+    padding-left: 4px !important;
+    display: inline !important;
+}
+
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current{
+    border:none !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+   
+    &:hover {
+        background-color: #2f579c;
+        background: #2f579c;
+        border: none;
+    }
+}
+
+.dataTables_paginate {
+    margin-left: 400px;
+}
+
+h1{
+    color:#12397b;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.next{
+    color:#12397b !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.previous{
+    color:#12397b !important;
+}
+
+
+  .custom-icon {
+    color: #12397b;
+  }
+  /* .custom-icon:hover{
+    color: #12397b;
+  } */
+
+  .paginate-button:hover .custom-icon {
+    color: white; 
+  }

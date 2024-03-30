@@ -1,0 +1,84 @@
+doctype html
+html(lang="en")
+
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="./css/AddReview.css")
+    
+    script(src='https://code.jquery.com/jquery-3.6.4.min.js' async)
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js" async)
+  body
+
+    .navbar
+      .navbar-heading
+        i.fas.fa-bug.bug-icon= language.bug_analyzer
+      a.generate-bug-button(href="./getAllBugsInfo")= language.generate_report
+      a.import-button
+       i.fas.fa-file-upload  IMPORT
+      a.logout-button
+       i.fas.fa-sign-out-alt
+
+    form#bugDetailsForm.container
+      .text-center.mt-5
+        h1#formHeading= language.heading_review_report_form
+
+      .form
+        .col-md-6.field.project
+          .form-group.input-area
+            label(for="projectName")= language.label_wrike_id
+            input#projectName(type='text')(name="projectName" class="form-control"placeholder=language.wrike_id)
+              
+          .error.error-txt= language.error_project_name
+
+        .col-md-6.field.bugsource
+          .form-group.input-area
+            label(for="bugSource")= language.label_task_name
+            input#bugSource(type='text')(name="bugSource" class="form-control" placeholder=language.task_name)
+              
+          .error.error-txt= language.error_bug_source
+
+        .col-md-6.field.bugtype
+          .form-group.input-area
+            label(for="bugType")= language.label_review_type
+            select#bugType(name="bugType" class="form-control" required)
+              option(value="" selected disabled)=language.review_type
+          .error.error-txt#bugterr= language.error_bug_type
+
+        .col-md-6.field.bugtype
+          .form-group.input-area
+            label(for="bugType")= language.label_developer_name
+            select#bugType(name="bugType" class="form-control" required)
+              option(value="" selected disabled)=language.label_developer_name
+          .error.error-txt#bugterr= language.error_bug_type
+
+        .col-md-12.field.bugdescription
+          .form-group
+            label(for="bugDescription")= language.label_review_point
+            textarea#bugDescription(name="bugDescription" class="form-control" placeholder=language.placeholder_review_point rows="1" required)
+          .error.error-txt#bugdeserror= language.error_bug_description
+         
+        #additional-review-points
+        button.btn.btn-add-row(type='button')
+            i.fa-solid.fa-plus=language.add_row
+        
+
+       
+
+
+      #btn
+        button(type="reset" id="resetBtn")= language.button_reset
+        button(type="submit" id="submitBtn")= language.button_submit
+        
+
+  script(src="https://code.jquery.com/jquery-3.5.1.min.js")
+  link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css")
+  script(src="https://cdn.jsdelivr.net/npm/toastify-js")
+  script(src="https://cdn.jsdelivr.net/npm/sweetalert2@10")
+  script(src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js")
+//-   script(src="./js/LoadInitialData.js")
+//-   script(src="./js/GeneralFunc.js")
+//-   script(src="./js/AddBugBulkImport.js")
+//-   script(src="./js/AddBugInfo.js")

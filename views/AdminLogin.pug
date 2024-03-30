@@ -1,0 +1,37 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="../css/Login.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
+    
+  body
+    header.navbar
+      div.container
+        i.fas.fa-bug.bug-icon= language.bug_analyzer
+
+    div.outer
+      div.wrapper
+        header= language.heading_login_form
+        form(action="/user/login", method="post", id="loginForm")
+
+          div.field.username
+            div.input-area
+              input(type="text", placeholder=language.label_username, name="username")
+              i.icon.fas.fa-user-tie
+              i.error.error-icon.fas.fa-exclamation-circle
+            div.error.error-txt= language.error_username_blank
+
+          div.field.password
+            div.input-area
+              input(type="password", placeholder=language.placeholder_password, name="password")
+              i.icon.fas.fa-lock
+              i.error.error-icon.fas.fa-exclamation-circle
+            div.error.error-txt= language.error_password_blank
+
+          input.login-btn(type="submit", value=language.button_login)
+
+      script(src="../js/AdminLogin.js")
+      link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css")
+      script(src="https://cdn.jsdelivr.net/npm/toastify-js")

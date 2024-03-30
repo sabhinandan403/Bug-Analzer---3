@@ -1,0 +1,75 @@
+2024-01-19 16:57:12.687,Analysis,ERROR,,NoName,1,,,uncaughtException: Cannot find module 'dotenv'
+Require stack:
+- C:\Users\VE00YM702\Desktop\Bug Analysis\app.js
+Error: Cannot find module 'dotenv'
+Require stack:
+- C:\Users\VE00YM702\Desktop\Bug Analysis\app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\VE00YM702\Desktop\Bug Analysis\app.js:12:1)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+2024-01-19 16:57:43.472,Analysis,ERROR,,NoName,1,,,uncaughtException: Cannot find module 'dotenv'
+Require stack:
+- C:\Users\VE00YM702\Desktop\Bug Analysis\app.js
+Error: Cannot find module 'dotenv'
+Require stack:
+- C:\Users\VE00YM702\Desktop\Bug Analysis\app.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (C:\Users\VE00YM702\Desktop\Bug Analysis\app.js:12:1)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+2024-01-19 17:52:38.818,Analysis,ERROR,,NoName,1,,,uncaughtException: logger is not defined
+ReferenceError: logger is not defined
+    at Object.exports.InsertToDb (C:\Users\VE00YM702\Desktop\Bug Analysis\common\db\DbTemplate.js:25:5)
+    at Object.exports.InsertBugDetails (C:\Users\VE00YM702\Desktop\Bug Analysis\common\db\DbService.js:5:16)
+    at Object.exports.AddBug (C:\Users\VE00YM702\Desktop\Bug Analysis\bugs\bugs.services.js:5:15)
+    at exports.AddBugInfo (C:\Users\VE00YM702\Desktop\Bug Analysis\bugs\bugs.controller.js:9:46)
+    at Layer.handle [as handle_request] (C:\Users\VE00YM702\Desktop\Bug Analysis\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\VE00YM702\Desktop\Bug Analysis\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\VE00YM702\Desktop\Bug Analysis\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\VE00YM702\Desktop\Bug Analysis\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\VE00YM702\Desktop\Bug Analysis\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\VE00YM702\Desktop\Bug Analysis\node_modules\express\lib\router\index.js:346:12)
+2024-01-19 17:54:08.113,Analysis,ERROR,,NoName,1,,,uncaughtException: logger is not defined
+ReferenceError: logger is not defined
+    at Server.<anonymous> (C:\Users\VE00YM702\Desktop\Bug Analysis\app.js:25:6)
+    at Object.onceWrapper (node:events:509:28)
+    at Server.emit (node:events:390:28)
+    at emitListeningNT (node:net:1368:10)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+2024-01-19 17:56:21.002,Analysis,ERROR,app.js,NoName,1,onceWrapper,25,uncaughtException: logger is not defined
+ReferenceError: logger is not defined
+    at Object.exports.InsertToDb (C:\Users\VE00YM702\Desktop\Bug Analysis\common\db\DbTemplate.js:25:5)
+    at Object.exports.InsertBugDetails (C:\Users\VE00YM702\Desktop\Bug Analysis\common\db\DbService.js:5:16)
+    at Object.exports.AddBug (C:\Users\VE00YM702\Desktop\Bug Analysis\bugs\bugs.services.js:5:15)
+    at exports.AddBugInfo (C:\Users\VE00YM702\Desktop\Bug Analysis\bugs\bugs.controller.js:9:46)
+    at Layer.handle [as handle_request] (C:\Users\VE00YM702\Desktop\Bug Analysis\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\VE00YM702\Desktop\Bug Analysis\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\VE00YM702\Desktop\Bug Analysis\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\VE00YM702\Desktop\Bug Analysis\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\VE00YM702\Desktop\Bug Analysis\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\VE00YM702\Desktop\Bug Analysis\node_modules\express\lib\router\index.js:346:12)
+2024-01-19 18:07:36.029,Analysis,ERROR,app.js,NoName,1,onceWrapper,25,uncaughtException: logger is not defined
+ReferenceError: logger is not defined
+    at Object.exports.InsertToDb (C:\Users\VE00YM702\Desktop\Bug Analysis\common\db\DbTemplate.js:25:5)
+    at Object.exports.InsertBugDetails (C:\Users\VE00YM702\Desktop\Bug Analysis\common\db\DbService.js:5:16)
+    at Object.exports.AddBug (C:\Users\VE00YM702\Desktop\Bug Analysis\bugs\bugs.services.js:5:15)
+    at exports.AddBugInfo (C:\Users\VE00YM702\Desktop\Bug Analysis\bugs\bugs.controller.js:9:46)
+    at Layer.handle [as handle_request] (C:\Users\VE00YM702\Desktop\Bug Analysis\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\VE00YM702\Desktop\Bug Analysis\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\VE00YM702\Desktop\Bug Analysis\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\VE00YM702\Desktop\Bug Analysis\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\VE00YM702\Desktop\Bug Analysis\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\VE00YM702\Desktop\Bug Analysis\node_modules\express\lib\router\index.js:346:12)

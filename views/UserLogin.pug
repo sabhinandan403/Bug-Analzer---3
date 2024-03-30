@@ -1,0 +1,50 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title= language.bug_analyzer
+    link(rel="stylesheet", href="../css/Login.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
+    
+  body
+    header.navbar
+      div.container
+        i.fas.fa-bug.bug-icon= language.bug_analyzer
+
+    div.wrapper
+      header= language.heading_user_login
+      form(action="/user/login", method="post", id="userLoginForm")
+
+        .field.employeecategory
+          .input-area
+            select(name="employeecategory" id="one" class="select-placeholder")
+              option(value="" disabled selected)= language.label_employee_category
+              option(value="Project Manager")= language.employee_category_project_manager
+              option(value="Team Lead")= language.employee_category_team_lead
+              option(value="Developer")= language.employee_category_developer
+              option(value="Tester")= language.tester
+
+            i.icon.fas.fa-user-tie
+            i.error.error-icon.fas.fa-exclamation-circle
+          .error.error-txt= language.error_employee_category_empty
+
+        .field.username
+          .input-area
+            input(type="text", placeholder=language.placeholder_user_id)
+            i.icon.fas.fa-user-tie
+            i.error.error-icon.fas.fa-exclamation-circle
+          .error.error-txt= language.error_user_id_blank
+              
+        .field.password
+          .input-area
+            input(type="password", placeholder=language.placeholder_password)
+            i.icon.fas.fa-lock
+            i.error.error-icon.fas.fa-exclamation-circle
+          .error.error-txt= language.error_password_blank
+
+        input.login-btn(type="submit", value=language.button_login)
+
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css")
+        script(src="https://cdn.jsdelivr.net/npm/toastify-js")
+        script(src="./js/UserLogin.js")

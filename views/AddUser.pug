@@ -1,0 +1,114 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Register Form
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
+    link(rel="stylesheet", href="../css/AddUser.css")
+
+  body
+
+    header.navbar
+      div.container
+        i.fas.fa-bug.bug-icon= language.bug_analyzer
+        a.logout-button
+         i.fas.fa-sign-out-alt
+
+    div.wrapper
+      header= language.heading_user_registration_form
+      form#registerForm(action="/register", method="post")
+        div#parent_div
+          div#first_div
+
+            div.field.employeecategory
+              div.input-area
+                select(name="employeecategory" id="one")
+                  option(value="", disabled, selected) #{language.employee_category}
+                  option(value="Project Manager") #{language.project_manager}
+                  option(value="Team Lead") #{language.team_lead}
+                  option(value="Developer") #{language.developer}
+                  option(value="Tester") #{language.tester}
+                i.icon.fas.fa-user-tie
+                i.error.error-icon.fas.fa-exclamation-circle
+              div.error.error-txt= language.error_employee_category_blank
+
+            div.field.email
+              div.input-area
+                input(type="text", placeholder=language.placeholder_email, name="email")
+                i.icon.fas.fa-envelope
+                i.error.error-icon.fas.fa-exclamation-circle
+              div.error.error-txt=  language.error_email_blank
+
+            div.field.selectteam
+              div.input-area
+                select(name="selectteam"  id="third")
+                  option(value="", disabled, selected,class="default-option") #{language.select_team}
+                i.icon.fas.fa-users
+                i.error.error-icon.fas.fa-exclamation-circle
+              div.error.error-txt= language.error_team_blank
+
+            
+
+            //- div.field.selectprojects.hidden
+            //-   div.input-area.checkbox-container
+
+
+            div.field.selectprojects.hidden
+              div.input-area.checkbox-container#dropdown(data-control="checkbox-dropdown")   
+            
+            div.field.addteam
+              div.input-area
+                input(type="text", placeholder=language.placeholder_add_team)
+                i.icon.fas.fa-users
+                i.error.error-icon.fas.fa-exclamation-circle
+              div.error.error-txt= language.error_team_blank
+
+
+          div#second_div
+            div.field.userid
+              div.input-area
+                input(type="text", placeholder=language.placeholder_user_id, name="userid")
+                i.icon.fas.fa-user-plus
+                i.error.error-icon.fas.fa-exclamation-circle
+              div.error.error-txt= language.error_user_id_blank
+
+            div.field.password
+              div.input-area
+                input(type="password", placeholder=language.placeholder_password, name="password")
+                i.icon.fas.fa-lock
+                i.error.error-icon.fas.fa-exclamation-circle
+              div.error.error-txt= language.error_password_blank
+
+            div.field.addprojectforpm.hidden
+              div.input-area
+                input(type="text", placeholder=language.placeholder_add_project)
+                i.icon.fas.fa-tasks
+                i.error.error-icon.fas.fa-exclamation-circle
+            
+            div.field.selectproject
+              div.input-area
+                select(name="selectproject"  id="second",class="default-option")
+                  option(value="", disabled, selected) #{language.select_project}
+                i.icon.fas.fa-tasks
+                i.error.error-icon.fas.fa-exclamation-circle
+              div.error.error-txt= language.error_project_blank
+            
+            div.field.addprojectfortl.hidden
+              div.input-area
+                input(type="text", placeholder=language.placeholder_add_project)
+                i.icon.fas.fa-tasks
+                i.error.error-icon.fas.fa-exclamation-circle
+
+            div.field.addproject
+              div.input-area
+                input(type="text", placeholder=language.placeholder_add_project)
+                i.icon.fas.fa-tasks
+                i.error.error-icon.fas.fa-exclamation-circle
+              div.error.error-txt= language.error_project_blank
+        input(type="submit", value=language.button_register)
+
+  link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css")
+  script(src="https://cdn.jsdelivr.net/npm/toastify-js")
+  script(src="https://cdn.jsdelivr.net/npm/sweetalert2@10")
+  script(src="../js/AddUser.js")

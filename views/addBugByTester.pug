@@ -1,0 +1,88 @@
+doctype html
+html(lang="en")
+
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="./css/AddBug.css")
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
+  body
+
+    .navbar
+      .navbar-heading
+        i.fas.fa-bug.bug-icon= language.bug_analyzer
+      a.generate-bug-button(href="./getAllBugsInfo")= language.generate_report
+      a.logout-button
+       i.fas.fa-sign-out-alt
+
+    form#bugDetailsForm.container
+      .text-center.mt-5
+        h1#formHeading= language.heading_bug_report_form
+
+      .form
+        .col-md-6.field.project
+          .form-group.input-area
+            label(for="projectName")= language.label_project
+            select#projectName(name="projectName" class="form-control")
+              option(value="" disabled selected) -Select Project Name-
+          .error.error-txt= language.error_project_name
+
+        .col-md-6.field.bugsource
+          .form-group.input-area
+            label(for="bugSource")= language.label_bug_source
+            select#bugSource(name="bugSource" class="form-control")
+              option(value="" selected disabled) -Select Bug Source-
+          .error.error-txt= language.error_bug_source
+
+        .col-md-12.field.bugdescription
+          .form-group
+            label(for="bugDescription")= language.label_bug_description
+            textarea#bugDescription(name="bugDescription" class="form-control" placeholder=language.placeholder_bug_description rows="4" required)
+          .error.error-txt#bugdeserror= language.error_bug_description
+         
+
+        .col-md-6.field.bugtype
+          .form-group.input-area
+            label(for="bugType")= language.label_bug_type
+            select#bugType(name="bugType" class="form-control" required)
+              option(value="" selected disabled)=language.bug_type
+          .error.error-txt#bugterr= language.error_bug_type
+
+        .col-md-6.field.bugcategory
+          .form-group.input-area
+            label(for="bugCategory")= language.label_bug_category
+            select#bugCategory(name="bugCategory" class="form-control")
+              option(value="" selected disabled) -Select Your Issue-
+          .error.error-txt= language.error_bug_category
+
+        #rcaField1.hidden.field.col-md-12.rootcause
+          .form-group.input-area#rootCauseDiv
+            label(for="rootCause")= language.label_root_cause
+            textarea#rootCause(name="rootCause" class="form-control" placeholder=language.placeholder_root_cause rows="2")
+          .error.error-txt#rootcerr= language.error_root_cause
+
+        #rcaField2.hidden.field.col-md-12.actiontoprevent
+          .form-group.input-area#actionToPreventDiv
+            label(for="actionToPrevent")= language.label_action_to_prevent
+            textarea#actionToPrevent(name="actionToPrevent" class="form-control" placeholder=language.placeholder_action_to_prevent rows="2")
+          .error.error-txt#bugacperr= language.error_action_to_prevent
+
+        #rcaField3.hidden.field.col-md-12.remarks
+          .form-group.input-area#remarksDiv
+            label(for="remarks")= language.label_remarks
+            textarea#remarks(name="remarks" class="form-control" placeholder=language.placeholder_remarks rows="2")
+          .error.error-txt#remarksErr= language.error_remarks
+
+
+      #btn
+        button(type="reset" id="resetBtn")= language.button_reset
+        button(type="submit" id="submitBtn")= language.button_submit
+        
+
+  script(src="https://code.jquery.com/jquery-3.5.1.min.js")
+  link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css")
+  script(src="https://cdn.jsdelivr.net/npm/toastify-js")
+  script(src="https://cdn.jsdelivr.net/npm/sweetalert2@10")
+  script(src="./js/LoadInitialData.js")
+  script(src="./js/AddBugInfo.js")

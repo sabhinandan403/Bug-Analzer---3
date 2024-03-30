@@ -1,0 +1,60 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 10
+    },
+    "auditLog": "logs\\.b614c91e409f0f033630c641457d497bcf84ac8d-audit.json",
+    "files": [
+        {
+            "date": 1708402241977,
+            "name": "logs\\2024-02-20-BugAnalysis.log",
+            "hash": "53d4c700dd54c7c85b99036a40a8c3e01ffcef655746a46b2d21b56263e6622b"
+        },
+        {
+            "date": 1708492744925,
+            "name": "logs\\2024-02-21-BugAnalysis.log",
+            "hash": "75a792e617ec0100c4ced31721ad40cb8ef3dfadc21b6e08a6e82cf289c5c55c"
+        },
+        {
+            "date": 1708575050099,
+            "name": "logs\\2024-02-22-BugAnalysis.log",
+            "hash": "b12c4d362af2b1de843dcf295385ba723d12bb70064e6f6c5f74f368925d2807"
+        },
+        {
+            "date": 1708919600306,
+            "name": "logs\\2024-02-26-BugAnalysis.log",
+            "hash": "8f554d5bf9c5b8fe3c76bbc7a747d98a216fa66ad687ae7e5608e939901c3c9b"
+        },
+        {
+            "date": 1709006685936,
+            "name": "logs\\2024-02-27-BugAnalysis.log",
+            "hash": "32e113cbf7628380368b927035d8cd79d8b98eefebec69d769f2deb8f0e0f4bd"
+        },
+        {
+            "date": 1709090640042,
+            "name": "logs\\2024-02-28-BugAnalysis.log",
+            "hash": "7c304ee14e93b69ee13d0e3269b847607fe929a3a8ba916efa61c08d378c44d2"
+        },
+        {
+            "date": 1711446688430,
+            "name": "logs\\2024-03-26-BugAnalysis.log",
+            "hash": "a64247ec1e84d5f5fed0794a63e8f97c1a984d146b27b981922fb7d2a6cfe63f"
+        },
+        {
+            "date": 1711518343326,
+            "name": "logs\\2024-03-27-BugAnalysis.log",
+            "hash": "8786d2f04681f14fc6c7a8ff98a4694e2df5c7d0318b4968889bb26a54c16ac8"
+        },
+        {
+            "date": 1711603319968,
+            "name": "logs\\2024-03-28-BugAnalysis.log",
+            "hash": "3906011518e7c5af57c6d9d6c6ae7e0061b008d4210851719e0c2a4b8684cf83"
+        },
+        {
+            "date": 1711815956157,
+            "name": "logs\\2024-03-30-BugAnalysis.log",
+            "hash": "d17fe8b1d5e7b16cf4b3e17eae16b621b609d1a2109ac1b2172af31f252e4492"
+        }
+    ],
+    "hashType": "sha256"
+}

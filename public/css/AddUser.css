@@ -1,0 +1,309 @@
+
+/**
+ * Project Name : Bug Analyzer
+ * @Project Bug Analyzer
+ * @author  Yash Pathak
+ * @date    Jan 29, 2024 
+ * 
+ * Module: CSS File
+ * Description
+ * ----------------------------------------------------------------------------------- 
+ * Al the css for Add User page is  defined in this file.
+ * 
+ * -----------------------------------------------------------------------------------
+ * 
+ * Revision History
+ * -----------------------------------------------------------------------------------
+ * Modified By          Modified On         Description
+ * Yash Pathak          Jan 29, 2024      Initially Created
+ 
+ * -----------------------------------------------------------------------------------
+ */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  margin: 0; /* Reset default margin */
+  padding: 0; /* Reset default padding */
+  /* background-image: url('../images/login.png');
+  background-position: center;
+  background-size: cover */
+}
+
+header.navbar {
+  background-color: #12397b;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+div.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding-top: 1px;
+  padding-bottom: 2px;
+}
+
+.container i {
+  font-size: 24px;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  margin-left: 1330px;
+}
+
+::selection{
+  color: #fff;
+  /* background: #5372F0; */
+}
+
+.wrapper{
+  width: 700px;
+  padding: 40px 30px 50px 30px;
+  background: #fff;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.1);
+  margin-top: 20px;
+  margin-left: 400px;
+}
+.wrapper header{
+  font-size: 35px;
+  font-weight: 600;
+}
+.wrapper form{
+  margin: 40px 0;
+}
+form .field{
+  width: 100%;
+  margin-bottom: 20px;
+}
+form .field.shake{
+  animation: shake 0.3s ease-in-out;
+}
+@keyframes shake {
+  0%, 100%{
+    margin-left: 0px;
+  }
+  20%, 80%{
+    margin-left: -12px;
+  }
+  40%, 60%{
+    margin-left: 12px;
+  }
+}
+form .field .input-area{
+  height: 50px;
+  width: 100%;
+  position: relative;
+}
+
+form .field .input-area .checkbox-container{
+  height: 50px;
+  width: 100%;
+  position: relative;
+}
+
+form input,form select, .checkbox-container{
+  width: 100%;
+  height: 100%;
+  outline: none;
+  padding: 0 45px;
+  font-size: 18px;
+  background: none;
+  /* caret-color: #5372F0; */
+  border-radius: 5px;
+  border: 1px solid #bfbfbf;
+  border-bottom-width: 2px;
+  /* transition: all 0.2s ease; */
+  color:#bfbfbf;
+}
+
+form .field.shake input,
+form .field.error input{
+  border-color: #dc3545;
+}
+
+form .field.shake select,
+form .field.error select{
+  border-color: #dc3545 !important;
+}
+
+.field .input-area .checkbox-container i{
+  position: absolute;
+  top: 50%;
+  font-size: 18px;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.field .input-area i{
+  position: absolute;
+  top: 50%;
+  font-size: 18px;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.input-area .checkbox-container .icon{
+  left: 15px;
+  color: #bfbfbf;
+  transition: color 0.2s ease;
+}
+
+.input-area .icon{
+  left: 15px;
+  color: #bfbfbf;
+  transition: color 0.2s ease;
+}
+.input-area .error-icon{
+  right: 15px;
+  color: #dc3545;
+}
+
+form .field.shake input:focus ~ .icon,
+form .field.error input:focus ~ .icon{
+  color: #bfbfbf;
+}
+
+form .field .error-txt{
+  color: #dc3545;
+  text-align: left;
+  margin-top: 5px;
+}
+form .field .error{
+  display: none;
+}
+form .field.shake .error,
+form .field.error .error{
+  display: block;
+}
+form .pass-txt{
+  text-align: left;
+  margin-top: -10px;
+}
+.wrapper a{
+  color: #5372F0;
+  text-decoration: none;
+}
+.wrapper a:hover{
+  text-decoration: underline;
+}
+form input[type="submit"]{
+  height: 50px;
+  margin-top: 50px;
+  color: #fff;
+  padding: 0;
+  border: none;
+  background: #12397b;
+  cursor: pointer;
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #2f579c;
+    background: #2f579c;
+}
+}
+
+
+#parent_div{
+  display: flex;
+}
+
+#second_div{
+  padding-left: 20px;
+  width: 370px;
+}
+
+
+select:disabled {
+  background-color: #f0f0f0; /* Light gray background for disabled input */
+  color: #bfbfbf !important; /* Darker gray text color for disabled input */
+  cursor: not-allowed; /* Change cursor to not-allowed for disabled input */
+}
+
+input:disabled {
+  background-color: #f0f0f0; /* Light gray background for disabled input */
+  color: #bfbfbf !important; /* Darker gray text color for disabled input */
+  cursor: not-allowed; /* Change cursor to not-allowed for disabled input */
+}
+form select{
+  padding-left: 41px;
+}
+
+::placeholder {
+  color: #bfbfbf !important;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"]
+ {
+    color: black;
+}
+
+
+.hidden{
+  display:none;
+}
+
+
+.selectprojects .input-area input{
+  width: 10%;
+  height: 100%;
+}
+
+.checkbox-container {
+  /* height: 50px; */
+  /* overflow-y: auto; */
+  padding-left: 45px;
+  padding-top: 10px;
+  margin-top: 20px;
+}
+
+.checkbox-option{
+  padding-left: 5px !important;
+}
+
+.wrapper{
+  text-align: left;
+}
+.icon {
+  position: absolute;
+  top: 10px; /* Adjust the top position as needed */
+  left: 10px; /* Adjust the left position as needed */
+}
+
+.wrapper header{
+  text-align: center;
+  color:#12397b;
+}
+
+.white-box {
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 4px; 
+  border: 1px solid #bfbfbf;
+  width:200px;
+  max-width: 400px;
+  /* padding-bottom: 20px; */
+  max-height: 50px;
+  overflow-y: auto;
+  
+}
+

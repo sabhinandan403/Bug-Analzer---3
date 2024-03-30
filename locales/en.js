@@ -1,0 +1,116 @@
+/**
+ * Project Name: Bug Analyzer
+ * @project Bug Analyzer
+ * @author Yash Pathak
+ * @date Jan 19, 2024
+ *
+ * Description
+ * -----------------------------------------------------------------------------------
+ * JS file to srote messages values of pug files.
+ * -----------------------------------------------------------------------------------
+ *
+ * Revision History
+ * -----------------------------------------------------------------------------------
+ * Modified By       Modified On         Description
+ * Yash Pathak       Jan 19, 2024        Initially Created
+ * Yash Pathak       Jan 01, 2024        Added values for user files.
+ * -----------------------------------------------------------------------------------
+ */
+
+
+module.exports = {
+  bug_analyzer: "Bug Analyzer",
+  generate_report: "Generate Report",
+  heading_bug_report_form: "Bug Registration",
+  label_project: "Project",
+  label_bug_source: "Bug Source",
+  label_bug_description: "Bug Description",
+  label_bug_type: "Bug Type",
+  label_bug_category: "Bug Category",
+  label_root_cause: "Root Cause",
+  label_action_to_prevent: "Action to Prevent",
+  label_remarks: "Remarks",
+  placeholder_bug_description: "Enter Bug Description",
+  placeholder_root_cause: "Root Cause",
+  placeholder_action_to_prevent: "Enter Action To Prevent",
+  placeholder_remarks: "Enter Remark",
+  error_project_name: "Project Name can't be empty",
+  error_bug_source: "Bug Source can't be empty",
+  error_bug_description: "Bug Description can't be empty",
+  error_bug_type: "Bug Type can't be empty",
+  error_bug_category: "Bug Category can't be empty",
+  error_root_cause: "Root Cause can't be empty",
+  error_action_to_prevent: "Action to Prevent Category can't be empty",
+  error_remarks: "Remarks can't be empty",
+  button_reset: "RESET",
+  button_submit: "SUBMIT",
+  footer: "Bug Analyzer YMSLI @ 2024",
+  add_bug_btn: "ADD BUG",
+  bug_desc_heading: "*Bug Types and Quantities Across Projects.",
+  pbg: "Project Bug Summary",
+  all_bug_btn: "ALL BUGS",
+  application_listening: "Application is listening on port:",
+  bug_type: "-Select Bug Type-",
+  bug_source: "-Select Bug Source-",
+  bug_issue: "-Select Your Issue-",
+  logout: "Logout",
+  heading_user_login: "USER LOGIN",
+  label_employee_category: "Employee Category",
+  employee_category_project_manager: "Project Manager",
+  employee_category_team_lead: "Team Lead",
+  employee_category_developer: "Developer",
+  error_employee_category_empty: "Employee Category can't be empty",
+  placeholder_user_id: "User Id",
+  error_user_id_blank: "User Id can't be blank",
+  placeholder_password: "Password",
+  error_password_blank: "Password can't be blank",
+  button_login: "Login",
+  update_bug_heading: "UPDATE BUG",
+  heading_login_form: "ADMIN LOGIN",
+  label_username: "Username",
+  error_username_blank: "Username can't be blank",
+  heading_user_registration_form: "REGISTER USER",
+  employee_category: "Employee Category",
+  project_manager: "Project Manager",
+  team_lead: "Team Lead",
+  developer: "Developer",
+  placeholder_email: "Email",
+  error_employee_category_blank: "Employee Category can't be empty",
+  error_email_blank: "Email can't be blank",
+  select_team: "Select Team",
+  error_team_blank: "Team can't be empty",
+  placeholder_add_team: "Add Team",
+  placeholder_user_id: "UserId",
+  error_user_id_blank: "User Id can't be blank",
+  placeholder_password: "Password",
+  error_password_blank: "Password can't be blank",
+  select_project: "Select Project",
+  error_project_blank: "Project can't be empty",
+  placeholder_add_project: "Add Project",
+  button_register: "Register",
+  add_comment_btn: "Add Comment",
+  add_comment_modal_title: "Add Comment",
+  enter_comment_placeholder: "Enter your comment",
+  cancel_btn: "Cancel",
+  submit_btn: "Submit",
+  assign_to: "Assign To",
+  bug_status: "Change Status",
+  back:"BACK",
+  edit_bug_heading:"EDIT BUG",
+  chart_heding:"PROJECT BUGS PERCENTAGE",
+  tester:"Tester",
+  label_task: 'Task',
+  label_review_point:'Review Point',
+  label_review_type: 'Review Type',
+  label_developer_name:'Developer Name',
+  heading_review_report_form:'Review Registration',
+  label_wrike_id: 'Wrike ID',
+  label_task_name: 'Task Name',
+  label_assigned_to: 'Assigned To',
+  placeholder_additional_review_points:'Additional Review Points',
+  add_row: 'Add Row',
+  review_type:'Review Type',
+  placeholder_review_point:'Review Point',
+  wrike_id:'Wrike ID',
+  task_name:'Task Name',
+}

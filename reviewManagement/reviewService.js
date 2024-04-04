@@ -102,6 +102,8 @@ exports.GetDeveloperName = async function (usertype, username) {
             FROM developer_master dm1 
             JOIN developer_master dm2 ON dm1.project = dm2.project AND dm1.team = dm2.team
             WHERE dm2.developer = '${username}'
+            EXCEPT
+            (SELECT developer FROM developer_master WHERE developer='${username}')
         )
         SELECT developer FROM developer_query
         UNION
@@ -197,12 +199,13 @@ exports.AddReviewPoints = async function (body) {
     if (!reviewerName || !team || !projectName || !taskName || !reviewType || !reviewCategories || !wrikeId || !developerName || !reviewPoints) {
         return { success: false, message: messages.INVALID_REQUEST };
     }
+    
 
     // Create a new array with the same length as the existing array
-    const reviewPointsStatus = Array.from({ length: existingArray.length }, () => 'Open');
-    const commitIdBefore = Array.from({ length: existingArray.length }, () => 'Not Updated');
-    const commitIdAfter = Array.from({ length: existingArray.length }, () => 'Not Updated');
-    const developerComment = Array.from({ length: existingArray.length }, () => 'Not Updated');
+    const reviewPointsStatus = Array.from({ length: reviewPoints.length }, () => 'Open');
+    const commitIdBefore = Array.from({ length: reviewPoints.length }, () => 'Not Updated');
+    const commitIdAfter = Array.from({ length: reviewPoints.length }, () => 'Not Updated');
+    const developerComment = Array.from({ length: reviewPoints.length }, () => 'Not Updated');
     
     var query = `  INSERT INTO review_master(reviewer_name,team,project,task_name,wrike_id,review_point,review_type,review_category,developer_name,review_date,review_status,commit_id_before,commit_id_after,developer_comment)
     VALUES (
@@ -219,12 +222,12 @@ exports.AddReviewPoints = async function (body) {
       ARRAY[${reviewPointsStatus.map(status => `'${status}'`).join(', ')}],
       ARRAY[${commitIdBefore.map(idBefore => `'${idBefore}'`).join(', ')}],
       ARRAY[${commitIdAfter.map(idAfter => `'${idAfter}'`).join(', ')}],
-      ARRAY[${developerComment.map(comment => `'${comment}'`).join(', ')}]
+      ARRAY[${developerComment.map(comment => `'${comment}'`).join(', ')}])
     RETURNING *;
     
     `
     try {
-
+        
         var result = await pool.query(query)
         if (result.rowCount > 0) {
             return { success: true, data: result.rows[0] }
@@ -446,11 +449,45 @@ exports.UpdateReviewPoint = async function (wrikeId, body) {
 exports.GetMyReview = async function (username) {
 
     // Construct the query based on whether reviewPoints and reviewCategories are empty
-    var query = `SELECT rm.wrike_id,rm.task_name,rm.reviewer_name,rm.review_date,rt.review_type,rsm.status as review_status,rm.developer_name FROM review_master rm
-    LEFT JOIN review_type rt on rm.review_type = rt.review_type_id
-    LEFT JOIN review_status_master rsm on rm.review_status = rsm.review_status_id
-
-    WHERE rm.developer_name = '${username}';`
+    var query = `WITH review_status_counts AS (
+        SELECT
+            wrike_id,
+            COUNT(*) AS total_reviews,
+            COUNT(CASE WHEN rs = 'Open' THEN 1 END) AS open_count,
+            COUNT(CASE WHEN rs = 'Closed' THEN 1 END) AS closed_count
+        FROM
+            (
+                SELECT
+                    wrike_id,
+                    UNNEST(review_status) AS rs
+                FROM
+                    review_master
+                WHERE
+                    reviewer_name = 'Nilesh Kumar'
+            ) AS subquery
+        GROUP BY
+            wrike_id
+    )
+    SELECT
+        rm.wrike_id,
+        rm.task_name,
+        rm.reviewer_name,
+        rm.review_date,
+        rt.review_type,
+        CASE
+            WHEN open_count = 0 AND closed_count > 0 THEN ARRAY['Closed']
+            WHEN closed_count = 0 AND open_count > 0 THEN ARRAY['Open']
+            ELSE ARRAY['Open']
+        END AS review_status,
+        developer_name
+    FROM
+        review_master rm
+    JOIN
+        review_status_counts rsc ON rm.wrike_id = rsc.wrike_id
+    JOIN
+        review_type rt ON rt.review_type_id = rm.review_type
+    WHERE
+        developer_name = '${username}';`
 
     try {
         var result = await pool.query(query);
@@ -531,17 +568,17 @@ exports.UpdateDeveloperReviewPoints = async function (wrikeId, body) {
 
     // Add commit id before if it exists
     if (commitIdBefore) {
-        query += `commit_id_before=ARRAY[${commitIdBefore.map(commitBefore => `'${commitBefore}'`).join(', ')}],`;
+        query += `,commit_id_before=ARRAY[${commitIdBefore.map(commitBefore => `'${commitBefore}'`).join(', ')}]`;
     }
 
     // Add commit id after if it exists
     if (commitIdAfter) {
-        query += `commit_id_after=ARRAY[${commitIdAfter.map(commitAfter => `'${commitAfter}'`).join(', ')}]`;
+        query += `,commit_id_after=ARRAY[${commitIdAfter.map(commitAfter => `'${commitAfter}'`).join(', ')}]`;
     }
 
     // Add developer comment if it exists
     if (developerComment) {
-        query += `developer_comment=ARRAY[${developerComment.map(comment => `'${comment}'`).join(', ')}]'`;
+        query += `,developer_comment=ARRAY[${developerComment.map(comment => `'${comment}'`).join(', ')}]`;
     }
 
     // Add the WHERE clause

@@ -55,7 +55,7 @@
   font-size: 16px;
   text-decoration: none;
   overflow: hidden;
-  margin-left: 1100px;
+  /* margin-left: 1100px; */
   border-bottom: 1px solid white;
 }
 
@@ -339,4 +339,7 @@ label[for="dt-search-0"] {
     background-color: #fff;
     display: block;
     color: #555;
+}
+#viewReview{
+  margin-left: 1013px;
 }

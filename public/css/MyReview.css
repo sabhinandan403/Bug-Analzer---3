@@ -57,7 +57,7 @@
     font-size: 16px;
     text-decoration: none;
     overflow: hidden;
-    margin-left: 1200px;
+    /* margin-left: 1200px; */
     border-bottom: 1px solid white;
 }
 
@@ -347,4 +347,8 @@ label[for="dt-search-0"] {
 
 #dt-search-0{
     height:25px;
+}
+
+#addReview{
+    margin-left: 1167px;
 }

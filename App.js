@@ -26,7 +26,11 @@ const path = require('path');
 const router = require('./router/Routes');
 
 const storage = multer.memoryStorage(); // Store the file in memory
-const upload = multer({ storage: storage });
+const upload = multer({
+    storage: storage, limits: {
+        fileSize: 8000000 // Compliant: 8MB
+    }
+});
 
 require('dotenv').config();
 
@@ -37,7 +41,7 @@ global.logger = require('./common/logger/MessageLogger');
 global.messages = require('./common/messages/Messages');
 global.constants = require('./common/config/Constants');
 global.language = require('./locales/en');
-global.dbvalues=require('./common/config/DbValues')
+global.dbvalues = require('./common/config/DbValues')
 
 const port = process.env.PORT;
 

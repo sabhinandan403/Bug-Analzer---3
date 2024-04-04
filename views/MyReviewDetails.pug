@@ -16,7 +16,8 @@ html(lang="en")
                 //i.fas.fa-bug.bug-icon= language.bug_analyzer
                 h4 
                     |Review Management
-            a.generate-bug-button(href="./viewReview")= language.view_review
+            a#viewReview.generate-bug-button(href="./viewReview")= language.view_review
+            a.generate-bug-button(href="./myReview")= language.my_review
             a.import-button(style='margin-left:5px')(href="./addReview")= language.add_review
             a.logout-button
              i.fas.fa-sign-out-alt
@@ -60,15 +61,15 @@ html(lang="en")
                         .form-group
                             label(for='commitIdBefore') Commit Id Before
                                 span.text-danger *
-                            input#commitIdBefore.form-control(type='text')
+                            input#commitIdBefore.form-control(type='text' required='')
                         .form-group
                             label(for='commitIdAfter') Commit Id After
                                 span.text-danger *
-                            input#commitIdAfter.form-control(type='text')
+                            input#commitIdAfter.form-control(type='text' required='')
                         .form-group
                             label(for='developerComment') Developer Comment
                                 span.text-danger *
-                            input#developerComment.form-control(type='text')
+                            input#developerComment.form-control(type='text' required='')
                     .modal-footer
                         button.btn.btn-secondary(type='button' data-dismiss='modal'  style='width:70px;') Close
                         button#saveReviewPoint.btn.btn-primary(type='button') Update

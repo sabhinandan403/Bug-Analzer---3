@@ -3,7 +3,9 @@
 document.addEventListener("DOMContentLoaded", async function () {
     var username = localStorage.getItem('username')
     var usertype = localStorage.getItem('usertype')
-
+    if(usertype === 'developer'){
+        document.getElementById('addBug').style.display = 'none';
+    }
     const formatDate = (timestamp) => {
         if (timestamp === null || timestamp === undefined || timestamp === '') {
             return ''; // Return empty string
@@ -119,8 +121,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         const data = $('#myReviewTable').DataTable().row($(this).closest('tr')).data();
         const wrikeId = data.wrike_id;
         const reviewType = data.review_type;
-        localStorage.setItem('wrike_id', wrikeId);
-        localStorage.setItem('review_type', reviewType);
+        localStorage.setItem('wrikeId', wrikeId);
+        localStorage.setItem('reviewType', reviewType);
         // Redirect to myReviewPointDetail page with the Wrike ID
         window.location.href = `./myReviewDetails`;
     });

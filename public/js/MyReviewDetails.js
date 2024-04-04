@@ -198,35 +198,94 @@ document.addEventListener('DOMContentLoaded', async function () {
     });
 
     document.getElementById('saveReviewPoint').addEventListener('click', async function () {
-        const newStatus = document.getElementById('reviewStatus').value;
-        const newCommitIdBefore = document.getElementById('commitIdBefore').value; // Get the updated commit if before
-        const newCommitIdAfter = document.getElementById('commitIdAfter').value;
-        const newDeveloperComment = document.getElementById('developerComment').value;
+        const newStatusElement = document.getElementById('newReviewStatus');
+        const newCommitIdBeforeElement = document.getElementById('commitIdBefore');
+        const newCommitIdAfterElement = document.getElementById('commitIdAfter');
+        const newDeveloperCommentElement = document.getElementById('developerComment');
+    
+        // Check if any required element is null
+        if (!newStatusElement || !newCommitIdBeforeElement || !newCommitIdAfterElement || !newDeveloperCommentElement) {
+            console.error('One or more required elements not found.');
+            Swal.fire({
+                icon:'warning',
+                text: "Please fill all fields",
+                title:'Warning',
+                showConfirmButton:true,
+            }).then((result)=>{
+                if(result.confirm){
+                    $('#editReviewPointModal').modal('hide');
+                    Swal.close()
+                }
+            })
+            return
+            
+        }
+    
+        const newStatus = newStatusElement.value;
+        const newCommitIdBefore = newCommitIdBeforeElement.value;
+        const newCommitIdAfter = newCommitIdAfterElement.value;
+        const newDeveloperComment = newDeveloperCommentElement.value;
+        const reviewPointToUpdate = document.getElementById('reviewPoint').value
         const row = reviewDetailTable.row(this.closest('tr'));
         const rowData = row.data();
         console.log('row data of the updated row :', rowData)
         const reviewDate = rowData.review_date.split('  ')[1];
         const reviewPoints = reviewPoint[reviewDate] // Extract review date from row data
-        const updateIndex = reviewPoints.indexOf(rowData.review_point)
+        const updateIndex = reviewPoints.indexOf(reviewPointToUpdate)
+
+        if(!newCommitIdBefore || !newCommitIdAfter || !newDeveloperComment){
+            Swal.fire({
+                icon:'warning',
+                text: "Please fill all fields",
+                title:'Warning',
+                showConfirmButton:true,
+            }).then((result)=>{
+                if(result.confirm){
+                    $('#editReviewPointModal').modal('hide');
+                    Swal.close()
+                }
+            })
+            return
+        }
 
         if (updateIndex !== -1) {
-            reviewStatus[updateIndex] = newStatus
-            commitIdAfter[updateIndex] = newCommitIdAfter
-            commitIdBefore[updateIndex] = newCommitIdBefore
-            developerComments[updateIndex] = newDeveloperComment
+            reviewStatus[reviewDate][updateIndex] = newStatus
+            commitIdAfter[reviewDate][updateIndex] = newCommitIdAfter
+            commitIdBefore[reviewDate][updateIndex] = newCommitIdBefore
+            developerComment[reviewDate][updateIndex] = newDeveloperComment
+
+            // Check if any of the arrays are empty or undefined
+            if (
+                reviewStatus.length === 0 ||
+                commitIdAfter.length === 0 ||
+                commitIdBefore.length === 0 ||
+                developerComment.length === 0
+            ) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Validation Error',
+                    text: 'Please fill all fields before updating.',
+                    showConfirmButton:true
+                }).then((result)=>{
+                    if(result.confirm){
+                    Swal.close()
+                    }
+                });
+                return; // Exit the function if validation fails
+            }
             // Update the review point
             try {
-                const putResponse = await fetch(`/review/updateReviewPoint/${wrikeId}`, {
+                const putResponse = await fetch(`/review/updateDeveloperReviewPoint/${wrikeId}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        reviewStatus: reviewStatus,
-                        commitIdBefore: commitIdBefore,
-                        commitIdAfter: commitIdAfter,
+                        reviewStatus: reviewStatus[reviewDate],
+                        commitIdBefore: commitIdBefore[reviewDate],
+                        commitIdAfter: commitIdAfter[reviewDate],
                         reviewDate: reviewDate,
-                        developerComment: developerComment
+                        developerComment: developerComment[reviewDate]
                     })
                 });
                 if (putResponse.ok) {
@@ -299,11 +358,11 @@ document.addEventListener('DOMContentLoaded', async function () {
     //Function to logout
     document.querySelector(".logout-button").addEventListener("click", function () {
         var authorizationKey
-        if(sessionStorage.getItem('userCategory') === 'Project Manager'){
+        if (sessionStorage.getItem('userCategory') === 'Project Manager') {
             authorizationKey = 'pmAuthorization'
-        }else if(sessionStorage.getItem('userCategory') === 'Team Lead'){
+        } else if (sessionStorage.getItem('userCategory') === 'Team Lead') {
             authorizationKey = 'tlAuthorization'
-        }else if(sessionStorage.getItem('userCategory') === 'Developer'){
+        } else if (sessionStorage.getItem('userCategory') === 'Developer') {
             authorizationKey = 'devAuthorization'
         }
         Swal.fire({

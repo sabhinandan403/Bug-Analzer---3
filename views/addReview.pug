@@ -18,7 +18,7 @@ html(lang="en")
         h4 
          |Review Management
       a#addBug.generate-bug-button(href="./addBug")= language.add_bug
-      a#myReview.generate-bug-button(href="./addBug")= language.my_review
+      a#myReview.generate-bug-button(href="./myReview")= language.my_review
       a.generate-bug-button(href="./viewReview")= language.view_review
       a.logout-button
        i.fas.fa-sign-out-alt
@@ -38,7 +38,7 @@ html(lang="en")
         .col-md-6.field.task-name
           .form-group.input-area
             label(for="taskName")= language.label_task_name
-            input#taskName(type='text')(name="bugSource" class="form-control" placeholder=language.task_name pattern='[A-Za-z ]+' title='Please enter valid Name' required='')
+            input#taskName(type='text')(name="bugSource" class="form-control" placeholder=language.task_name required='')
               
           .error.error-txt= language.error_bug_source
 

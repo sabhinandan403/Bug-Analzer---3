@@ -259,10 +259,10 @@ form .pass-txt {
 }
 
 
-label{
+/* label{
   color:black;
   font-size: 20px;
-}
+} */
 
 .bugdescription{
   margin-top: 20px;
@@ -301,6 +301,7 @@ label{
 
 label{
   color:#12397b;
+  font-size: 20px;
 }
 
 #formHeading{

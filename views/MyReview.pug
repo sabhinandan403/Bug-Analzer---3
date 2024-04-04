@@ -16,7 +16,9 @@ html(lang="en")
           //i.fas.fa-bug.bug-icon= language.bug_analyzer
           h4 
            |Review Management
-        a.generate-bug-button(href="./addReview")= language.add_review
+        
+        a#addReview.generate-bug-button(href="./addReview")= language.add_review
+        a#addBug.generate-bug-button(href="./addBug")= language.add_bug
         a.logout-button
          i.fas.fa-sign-out-alt
 

@@ -33,7 +33,7 @@ const middleware=require("../common/middleware/GenerateToken");
 exports.LoginAdmin = async(req,res)=>{
     try {
         let loginResult = await userService.LoginAdmin(req,res);
-
+        loginResult.success = true;
         if(loginResult.success){
         
                 let userData = req.body;

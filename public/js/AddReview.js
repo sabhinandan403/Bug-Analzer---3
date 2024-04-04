@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     var username = localStorage.getItem('username');
     var usertype = localStorage.getItem('usertype');
 
-    if(usertype === 'project manager'){
+    if (usertype === 'project manager') {
         document.getElementById("myReview").style.display = 'none';
     }
     // Fetch review types
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 window.location.reload();
             }
         });
-        
+
     }
 
     // Fetch developers
@@ -101,10 +101,21 @@ document.addEventListener('DOMContentLoaded', async function () {
     plusButton.addEventListener('click', function () {
         const reviewCategoryField = document.getElementById('reviewCategory').value;
         if (reviewCategoryField === '') {
-            alert("Please select a review category.");
+
+            Swal.fire({
+                icon: 'warning',
+                title: 'Warning',
+                text: 'Please select a review category',
+                showConfirmButton: true
+            }).then(() => {
+                if (result.confirm) {
+                    Swal.close()
+                    return false;
+                }
+            })
             return false;
         }
-        
+
         reviewCategories.push(reviewCategoryField); // Store review category
         document.getElementById('reviewCategory').value = ''
         updatePlusButtonState(); // Update plus button state based on review point textarea
@@ -124,19 +135,21 @@ document.addEventListener('DOMContentLoaded', async function () {
     const resetButton = document.getElementById('resetBtn');
     resetButton.addEventListener('click', function () {
         // Clear the review-point field
-        document.getElementById('reviewPoint').value = '';
-        // Clear review categories array
-        reviewCategories.length = 0;
-
-        //Clear review status array
-        reviewStatus.length = 0
-        // Remove all additional review point fields
-        const additionalReviewPoints = document.querySelectorAll('.additional-review-point');
-        additionalReviewPoints.forEach(textarea => {
-            textarea.remove();
-        });
-        // Update plus button state
-        updatePlusButtonState();
+        // document.getElementById('reviewPoint').value = '';
+        // // Clear review categories array
+        // reviewCategories.length = 0;
+        // const reviewPointDiv = document.querySelector('.col-md-12.field.review-point');
+        // //Clear review status array
+        // reviewStatus.length = 0
+        // // Remove all additional review point fields
+        // const additionalReviewPoints = document.querySelectorAll('.additional-review-point');
+        // additionalReviewPoints.forEach(textarea => {
+        //     reviewPointDiv.removeChild(textarea)
+        //    // textarea.remove();
+        // });
+        // // Update plus button state
+        // updatePlusButtonState();
+        location.reload();
     });
 
     // Add functionality to submit button
@@ -154,8 +167,24 @@ document.addEventListener('DOMContentLoaded', async function () {
         // Combine review points with their corresponding categories
         const reviewCategoryField = document.getElementById('reviewCategory').value;
         reviewCategories.push(reviewCategoryField); // Store review category
-        
-        
+
+        if (reviewCategories.length !== allReviewPointsCombined.length) {
+
+            Swal.fire({
+                icon: 'warning',
+                title: 'Error',
+                text: 'Please select review category',
+                showCancelButton: true,
+                confirmButtonText: 'ok',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Redirect to assignedBugs page
+                    Swal.close()
+                }
+            });
+            return
+        }
+
         const formData = {
             reviewerName: username,
             team: localStorage.getItem('team'),
@@ -170,11 +199,11 @@ document.addEventListener('DOMContentLoaded', async function () {
         };
 
         var wrikeID = document.getElementById('wrikeId').value;
-        var taskName = document.getElementById('taskName').value;
+        //var taskName = document.getElementById('taskName').value;
 
         const testWrikeId = /^\d+$/.test(wrikeID);
-        const testTaskName = /^[A-Za-z]+$/.test(taskName);
-        if(!testWrikeId || !testTaskName){
+        // const testTaskName = /^[A-Za-z]+$/.test(taskName);
+        if (!testWrikeId) {
             Swal.fire({
                 icon: 'warning',
                 title: 'Error',
@@ -190,22 +219,6 @@ document.addEventListener('DOMContentLoaded', async function () {
             return false;
         }
 
-        if (reviewCategories.length !== allReviewPointsCombined.length) {
-            
-            Swal.fire({
-                icon: 'warning',
-                title: 'Error',
-                text: 'Please select review category',
-                showCancelButton: true,
-                confirmButtonText: 'ok',
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // Redirect to assignedBugs page
-                    Swal.close()
-                }
-            });
-            return false
-        }
 
         // Check if any property is undefined
         for (const key in formData) {
@@ -244,8 +257,10 @@ document.addEventListener('DOMContentLoaded', async function () {
                     title: 'Success',
                     text: 'Review points added successfully',
                     showConfirmButton: true
-                }).then(() => {
-                    location.reload();
+                }).then((result) => {
+                    if (result.confirm) {
+                        location.reload();
+                    }
                 })
             } else {
                 Swal.fire({
@@ -254,9 +269,11 @@ document.addEventListener('DOMContentLoaded', async function () {
                     text: 'There was an error adding the review points.',
                     showConfirmButton: true
 
-                }).then(() => {
-                    console.log("Failed to add review points");
-                    location.reload();
+                }).then((result) => {
+                    if (result.confirm) {
+                        console.log("Failed to add review points");
+                        location.reload();
+                    }
                 })
 
             }
@@ -320,11 +337,11 @@ document.addEventListener('DOMContentLoaded', async function () {
     //Function to show swal message.
     document.querySelector(".logout-button").addEventListener("click", function () {
         var authorizationKey
-        if(sessionStorage.getItem('userCategory') === 'Project Manager'){
+        if (sessionStorage.getItem('userCategory') === 'Project Manager') {
             authorizationKey = 'pmAuthorization'
-        }else if(sessionStorage.getItem('userCategory') === 'Team Lead'){
+        } else if (sessionStorage.getItem('userCategory') === 'Team Lead') {
             authorizationKey = 'tlAuthorization'
-        }else if(sessionStorage.getItem('userCategory') === 'Developer'){
+        } else if (sessionStorage.getItem('userCategory') === 'Developer') {
             authorizationKey = 'devAuthorization'
         }
         Swal.fire({

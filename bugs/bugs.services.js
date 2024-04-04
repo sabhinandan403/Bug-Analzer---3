@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-catch */
 /**
  * Project Name: Bug Analyzer
  * @project Bug Analyzer
@@ -40,6 +41,7 @@ exports.GetProjectNameData=async (tokenData,category) => {
         let projectName = await dbService.GetProjectNames(tokenData,category);
         return projectName;
     } catch (getProjectError) {
+        logger.error('Cannot get project name data')
         throw getProjectError;
     }
 }
@@ -55,6 +57,7 @@ exports.GetDefaultBugData = async () => {
         let bugData = await dbService.GetDefaultBugData();
         return bugData;
     } catch (bugDataError) {
+        logger.error('Cannot get default bug data')
         throw bugDataError;
     }
 }
@@ -71,6 +74,7 @@ exports.AddBug = async (bugData) => {
         let addBugResult = await dbService.InsertBugDetails(bugMap);
         return addBugResult;
     } catch (addBugError) {
+        logger.error('Cannot add project bug data')
         throw addBugError;
     }
 };
@@ -85,6 +89,7 @@ exports.GetBugData = async (teamName) => {
         let bugData = await dbService.GetAllBugDetails(teamName);
         return bugData;
     } catch (getBugError) {
+        logger.error('Cannot get bug data')
         throw getBugError;
     }
 };
@@ -100,6 +105,7 @@ exports.GetProjectBugsData = async (projectName) => {
         let bugData = await dbService.GetProjectBugsDetails(projectName);
         return bugData;
     } catch (getProjectBugsError) {
+        logger.error('Cannot get project bugs name data')
         throw getProjectBugsError;
     }
 };
@@ -117,6 +123,7 @@ exports.GetProjectBugCount = async (projectName) => {
         let bugData = await dbService.GetProjectBugCount(projectName);
         return bugData;
     } catch (getProjectBugsError) {
+        logger.error('Cannot get project bug count data')
         throw getProjectBugsError;
     }
 };
@@ -133,6 +140,7 @@ exports.GetSpecificBugsData = async (bugId) => {
         let bugData = await dbService.GetSpecificBugsData(bugId);
         return bugData;
     } catch (projectBugError) {
+        logger.error('Cannot get specific bug data')
         throw projectBugError;
     }
 };
@@ -158,6 +166,7 @@ exports.EditBug= async (bugData) => {
         return { success: false, message: global.messages.EDIT_BUG_DATA_FAILURE};
         }
     } catch (editBugError) {
+        logger.error('Cannot edit bug data')
         throw editBugError;
     }
 };
@@ -192,6 +201,7 @@ exports.CheckUniqueBug= async (bugData) => {
         return { success: false, message: global.messages.INVALID_BUG_DATA};
         }
     } catch (editBugError) {
+        logger.error('Cannot check uniquw bug data')
         throw editBugError;
     }
 };

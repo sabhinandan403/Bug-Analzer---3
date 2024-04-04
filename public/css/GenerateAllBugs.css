@@ -262,7 +262,7 @@ table.dataTable thead>tr>th.sorting:first-child:after{
     border:none !important;
     &:hover {
         background-color: #2f579c;
-        background: #2f579c;
+        /* background: #2f579c; */
         border: none;
     }
 }

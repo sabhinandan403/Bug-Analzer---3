@@ -23,5 +23,9 @@ module.exports={
     INTERNAL_SERVER_ERROR:500,
     OK:200,
     BAD_REQUEST:400,
-    MAX_LIMIT:3
+    MAX_LIMIT:3,
+    // Added Usertypes, 01/04/2024, Abhinandan Kumar, START
+    PROJECT_MANAGER: 'project manager',
+    TEAM_LEAD : 'team lead',
+    DEVELOPER:'developer'
 }

@@ -1,0 +1,44 @@
+2024-04-01 16:16:55.624,Analysis,ERROR,,NoName,1,,,uncaughtException: Client was passed a null or undefined query
+TypeError: Client was passed a null or undefined query
+    at C:\Users\ve00ym670\Desktop\Bug Analzer - 3\node_modules\pg-pool\index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2024-04-01 16:20:09.754,Analysis,ERROR,,NoName,1,,,uncaughtException: Client was passed a null or undefined query
+TypeError: Client was passed a null or undefined query
+    at C:\Users\ve00ym670\Desktop\Bug Analzer - 3\node_modules\pg-pool\index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2024-04-01 16:20:10.204,Analysis,ERROR,,NoName,1,,,uncaughtException: syntax error at or near "Kumar"
+error: syntax error at or near "Kumar"
+    at C:\Users\ve00ym670\Desktop\Bug Analzer - 3\node_modules\pg-pool\index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2024-04-01 16:27:30.834,Analysis,ERROR,,NoName,1,,,uncaughtException: Client was passed a null or undefined query
+TypeError: Client was passed a null or undefined query
+    at C:\Users\ve00ym670\Desktop\Bug Analzer - 3\node_modules\pg-pool\index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2024-04-01 16:27:31.213,Analysis,ERROR,,NoName,1,,,uncaughtException: syntax error at or near "Kumar"
+error: syntax error at or near "Kumar"
+    at C:\Users\ve00ym670\Desktop\Bug Analzer - 3\node_modules\pg-pool\index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2024-04-01 16:31:50.547,Analysis,ERROR,,NoName,1,,,uncaughtException: Client was passed a null or undefined query
+TypeError: Client was passed a null or undefined query
+    at C:\Users\ve00ym670\Desktop\Bug Analzer - 3\node_modules\pg-pool\index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2024-04-01 16:31:50.844,Analysis,ERROR,,NoName,1,,,uncaughtException: syntax error at or near "Kumar"
+error: syntax error at or near "Kumar"
+    at C:\Users\ve00ym670\Desktop\Bug Analzer - 3\node_modules\pg-pool\index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2024-04-01 16:35:42.051,Analysis,ERROR,,NoName,1,,,uncaughtException: Client was passed a null or undefined query
+TypeError: Client was passed a null or undefined query
+    at C:\Users\ve00ym670\Desktop\Bug Analzer - 3\node_modules\pg-pool\index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2024-04-01 16:35:42.083,Analysis,ERROR,,NoName,1,,,uncaughtException: syntax error at or near "Kumar"
+error: syntax error at or near "Kumar"
+    at C:\Users\ve00ym670\Desktop\Bug Analzer - 3\node_modules\pg-pool\index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2024-04-01 16:36:40.100,Analysis,ERROR,,NoName,1,,,uncaughtException: Client was passed a null or undefined query
+TypeError: Client was passed a null or undefined query
+    at C:\Users\ve00ym670\Desktop\Bug Analzer - 3\node_modules\pg-pool\index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2024-04-01 21:00:28.891,Analysis,ERROR,,NoName,1,,,uncaughtException: syntax error at or near "Kumar"
+error: syntax error at or near "Kumar"
+    at C:\Users\ve00ym670\Desktop\Bug Analzer - 3\node_modules\pg-pool\index.js:45:11
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)

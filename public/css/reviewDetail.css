@@ -55,7 +55,7 @@
   font-size: 16px;
   text-decoration: none;
   overflow: hidden;
-  /* margin-left: 1200px; */
+  /* margin-left: 981px; */
   border-bottom: 1px solid white;
 }
 
@@ -308,7 +308,26 @@ label{
   margin-top: 10px !important;
 }
 
-#addBug{
-  margin-left: 1024px;
+.dt-input{
+    margin-right: 5px;
+}
+label[for="dt-length-0"] {
+    font-size: 16px; /* Adjust the font size as needed */
+}
+label[for="dt-search-0"] {
+    font-size: 16px; /* Adjust the font size as needed */
+}
+#dt-length-0{
+    height:25px;
+    width:48px
 }
 
+#dt-search-0{
+    height:25px;
+}
+#wrikeId .dt-column-order {
+    display: none;
+}
+#viewReview{
+  margin-left: 981px;
+}

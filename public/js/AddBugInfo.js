@@ -366,6 +366,11 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
+    var usertype = localStorage.getItem("usertype");
+    if(usertype === 'tester'){
+      document.getElementById('addReview').style.display = 'none';
+    }
+
   document.getElementById("resetBtn").addEventListener("click", function () {
     window.location.href = "./addBug";
   });

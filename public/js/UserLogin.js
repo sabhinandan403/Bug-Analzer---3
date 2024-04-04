@@ -136,6 +136,19 @@ document.addEventListener('DOMContentLoaded', async function () {
                 let password = pInput.value;
                 let category = categoryInput.value;
 
+                if(category === "Project Manager"){
+                    localStorage.setItem('usertype','project manager')
+                    localStorage.setItem('username',userid)
+                }else if(category === "Team Lead"){
+                    localStorage.setItem('username',userid)
+                    localStorage.setItem('usertype','team lead')
+                }else if(category === 'Developer'){
+                    localStorage.setItem('username',userid)
+                    localStorage.setItem('usertype','developer')
+                }else{
+                    localStorage.setItem('usertype','tester')
+                }
+
                 let response = await fetch("/user/userLogin", {
                     method: "POST",
                     headers: {

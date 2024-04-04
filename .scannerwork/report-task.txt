@@ -1,0 +1,6 @@
+projectKey=bug-analysis
+serverUrl=https://codequality.ymslilabs.com:8443
+serverVersion=8.5.1.38104
+dashboardUrl=https://codequality.ymslilabs.com:8443/dashboard?id=bug-analysis
+ceTaskId=AY6oMK1Yd6kCz3AjvWoI
+ceTaskUrl=https://codequality.ymslilabs.com:8443/api/ce/task?id=AY6oMK1Yd6kCz3AjvWoI

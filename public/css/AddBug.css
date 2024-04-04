@@ -47,7 +47,8 @@ body{
 }
 
 .navbar .generate-bug-button,
-.navbar .logout-button {
+.navbar .logout-button,
+.navbar  {
   position: relative;
   background-color: #12397b;
   color: white;
@@ -55,7 +56,16 @@ body{
   font-size: 16px;
   text-decoration: none;
   overflow: hidden;
-  margin-left: 1100px;
+  margin-left: 5px;
+  border-bottom: 1px solid white;
+}
+
+.navbar .add-review{
+  margin-left:990px;
+  color: white ;
+  cursor:pointer;
+  font-size:16px;
+  overflow: hidden;
   border-bottom: 1px solid white;
 }
 
@@ -75,13 +85,15 @@ body{
 }
 
 .navbar .generate-bug-button:hover, .navbar .import-button:hover,
-.navbar .logout-button:hover {
+.navbar .logout-button:hover, .navbar .add-review:hover {
   color: rgb(246, 108, 59);
   text-decoration: none; 
 } 
 
+
+
 .navbar .generate-bug-button::before,.navbar .import-button::before,
-.navbar .logout-button::before {
+.navbar .logout-button::before, .navbar .add-review::before {
   content: '';
   position: absolute;
   left: 0;
@@ -92,8 +104,9 @@ body{
   transition: width 2s ease;
 }
 
+
 .navbar .generate-bug-button:hover::before,.navbar .import-button:hover::before,
-.navbar .logout-button:hover::before {
+.navbar .logout-button:hover::before, .navabar .add-review:hover::before {
   width: 100%;
   background-color: rgb(246, 108, 59);
 }
@@ -156,7 +169,7 @@ h1{
 
     &:hover {
       background-color: #2f579c;
-      background: #2f579c;
+      /* background: #2f579c; */
   }
   }
 

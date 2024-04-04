@@ -57,5 +57,24 @@ router.get('/addReview',(req, res) => {
     res.render('addReview'); 
 })
 
+router.get('/viewReview',(req, res) => {
+    res.render('viewReview');
+})
+
+router.get('/reviewDetail', (req, res) =>{
+    res.render('reviewDetail');
+})
+
+
+router.get('/myReview', (req, res) =>{
+    res.render('MyReview');
+})
+
+router.get('/myReviewDetails', (req, res) =>{
+    res.render('MyReviewDetails');
+})
+
+
+
 
 module.exports = router

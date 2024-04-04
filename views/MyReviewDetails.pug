@@ -4,7 +4,7 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        link(rel="stylesheet" href="./css/reviewDetail.css")
+        link(rel="stylesheet" href="./css/MyReviewDetails.css")
         link(rel='stylesheet' href='https://cdn.datatables.net/2.0.0/css/dataTables.dataTables.min.css')
         
         link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css")
@@ -16,18 +16,17 @@ html(lang="en")
                 //i.fas.fa-bug.bug-icon= language.bug_analyzer
                 h4 
                     |Review Management
-            a#viewReview.generate-bug-button(href="./viewReview")= language.view_review
-            a.generate-bug-button(href="./addBug")= language.add_bug
+            a.generate-bug-button(href="./viewReview")= language.view_review
             a.import-button(style='margin-left:5px')(href="./addReview")= language.add_review
             a.logout-button
              i.fas.fa-sign-out-alt
 
-        main#reviewDetail.content.px-3.py-2.d-none
+        main#myReviewDetail.content.px-3.py-2.d-none
         .container-fluid
             .mb-3
                 h4#review-id Wrike ID: Task Name
             // Your Table Element
-            table#reviewDetailTable.table.table-bordered.table-striped
+            table#myReviewDetailTable.table.table-bordered.table-striped
                 thead
                     tr
                         th#wrikeId(scope='col')(style='background-color:#12397b; color:white') Sr. No.
@@ -51,7 +50,25 @@ html(lang="en")
                     .modal-body
                         .form-group
                             label(for='reviewPoint') Review Point
-                            input#reviewPoint.form-control(type='text')
+        
+                            textarea#reviewPoint.form-control(type='text' readonly)
+                        .form-group
+                            label(for='reviewStatus') Review Status
+                                span.text-danger *
+                            select#newReviewStatus.form-select(name='reviewStatus' required='')
+                                option(value='' disabled='' selected='') Select Review Status
+                        .form-group
+                            label(for='commitIdBefore') Commit Id Before
+                                span.text-danger *
+                            input#commitIdBefore.form-control(type='text')
+                        .form-group
+                            label(for='commitIdAfter') Commit Id After
+                                span.text-danger *
+                            input#commitIdAfter.form-control(type='text')
+                        .form-group
+                            label(for='developerComment') Developer Comment
+                                span.text-danger *
+                            input#developerComment.form-control(type='text')
                     .modal-footer
                         button.btn.btn-secondary(type='button' data-dismiss='modal'  style='width:70px;') Close
                         button#saveReviewPoint.btn.btn-primary(type='button') Update
@@ -63,5 +80,5 @@ html(lang="en")
     script(src="https://cdn.jsdelivr.net/npm/toastify-js")
     script(src="https://cdn.jsdelivr.net/npm/sweetalert2@10")
     script(src='//cdn.datatables.net/2.0.0/js/dataTables.min.js')
-    script(src="./js/reviewDetails.js")
+    script(src="./js/MyReviewDetails.js")
     script(src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js")

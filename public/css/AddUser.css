@@ -216,7 +216,7 @@ form input[type="submit"]{
 
   &:hover {
     background-color: #2f579c;
-    background: #2f579c;
+    /* background: #2f579c; */
 }
 }
 

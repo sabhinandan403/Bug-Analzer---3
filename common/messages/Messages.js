@@ -101,4 +101,24 @@ module.exports = {
   UNIQUE_BUG_FAILURE:"Bug Data is duplicate",
   VALID_BUG_DATA:"Bug data is valid",
 
+  // New Messages Added, 01/04/2024, Abhinandan Kumar, START
+  REQUEST_PARAMS_NOT_FOUND: 'Request Parameters Not Found',
+  GET_DEVELOPER_NAME_ERROR: "Error while getting developer name",
+  INTERNAL_SERVER_ERROR:'Internal Server Error',
+  GET_PROJECT_NAME_ERROR: 'Project Name not found',
+  DATA_NOT_FOUND:'Data Not Found',
+  GET_REVIEW_CATEGORY_FAILURE: 'Failed to get Review Category data',
+  GET_REVIEW_TYPE_FAILURE: 'Failed to get Review Type data',
+  BAD_REQUEST:'Bad Request',
+  ADD_REVIEW_SUCCESS:'Added Review Successfully',
+  ADD_REVIEW_FAILURE:'Failed to add Review points',
+  INVALID_REQUEST:'Invalid Request',
+  GET_REVIEW_POINTS_FAILURE: 'Cannot get review points',
+  GET_REVIEW_DETAILS_FAILURE: 'Cannot get review details',
+  REVIEW_REMOVE_SUCCESSFUL: 'Review Removed Successfully',
+  REVIEW_REMOVE_FAILURE:'Review Removed Failed',
+  DELETE_REVIEW_POINT_FAILURE:'Cannot delete point from review master table',
+  UPDATE_REVIEW_POINT_FAILURE:'Cannot update point in review master table',
+  UPDATE_REVIEW_DETAILS_FAILURE:'Cannot update review details',
+  GET_REVIEW_STATUS_FAILURE: 'Cannot get review status failure'
 };

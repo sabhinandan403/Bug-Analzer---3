@@ -1,0 +1,27 @@
+2024-04-02 22:00:26.014,Analysis,ERROR,,NoName,1,,,uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:387:5)
+    at ServerResponse.setHeader (node:_http_outgoing:644:11)
+    at ServerResponse.header (C:\Users\ve00ym670\Desktop\Bug Analzer - 3\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (C:\Users\ve00ym670\Desktop\Bug Analzer - 3\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (C:\Users\ve00ym670\Desktop\Bug Analzer - 3\node_modules\express\lib\response.js:278:15)
+    at exports.DeleteReviewPoint (C:\Users\ve00ym670\Desktop\Bug Analzer - 3\reviewManagement\reviewController.js:263:25)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2024-04-02 22:08:50.544,Analysis,ERROR,,NoName,1,,,uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:387:5)
+    at ServerResponse.setHeader (node:_http_outgoing:644:11)
+    at ServerResponse.header (C:\Users\ve00ym670\Desktop\Bug Analzer - 3\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (C:\Users\ve00ym670\Desktop\Bug Analzer - 3\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (C:\Users\ve00ym670\Desktop\Bug Analzer - 3\node_modules\express\lib\response.js:278:15)
+    at exports.DeleteReviewPoint (C:\Users\ve00ym670\Desktop\Bug Analzer - 3\reviewManagement\reviewController.js:263:25)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2024-04-02 22:16:19.690,Analysis,ERROR,,NoName,1,,,uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:387:5)
+    at ServerResponse.setHeader (node:_http_outgoing:644:11)
+    at ServerResponse.header (C:\Users\ve00ym670\Desktop\Bug Analzer - 3\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (C:\Users\ve00ym670\Desktop\Bug Analzer - 3\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (C:\Users\ve00ym670\Desktop\Bug Analzer - 3\node_modules\express\lib\response.js:278:15)
+    at exports.DeleteReviewPoint (C:\Users\ve00ym670\Desktop\Bug Analzer - 3\reviewManagement\reviewController.js:263:25)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)

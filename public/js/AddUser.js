@@ -867,7 +867,7 @@ document.querySelector(".logout-button").addEventListener("click", function () {
   }).then((result) => {
     if (result.isConfirmed) {
       window.sessionStorage.removeItem("authorization");
-      window.location.href = "../";
+      window.location.href = "../userLogin";
     }
   });
 });

@@ -32,5 +32,7 @@ router.use('/bugs', require('../bugs'));
 // Setting up routes for the '/user' endpoint using the 'user' module
 router.use('/user',require('../user'));
 
+// Setting up routes for the '/user' endpoint using the 'user' module
+router.use('/review',require('../reviewManagement'))
 // Exporting the configured router
 module.exports = router;

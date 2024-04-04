@@ -5,19 +5,21 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     link(rel="stylesheet", href="./css/AddReview.css")
-    
+    script(src='https://kit.fontawesome.com/ae360af17e.js' crossorigin='anonymous')
     script(src='https://code.jquery.com/jquery-3.6.4.min.js' async)
     link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css")
-    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
+    //link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js" async)
   body
 
     .navbar
       .navbar-heading
-        i.fas.fa-bug.bug-icon= language.bug_analyzer
-      a.generate-bug-button(href="./getAllBugsInfo")= language.generate_report
-      a.import-button
-       i.fas.fa-file-upload  IMPORT
+        //i.fas.fa-bug.bug-icon= language.bug_analyzer
+        h4 
+         |Review Management
+      a#addBug.generate-bug-button(href="./addBug")= language.add_bug
+      a#myReview.generate-bug-button(href="./addBug")= language.my_review
+      a.generate-bug-button(href="./viewReview")= language.view_review
       a.logout-button
        i.fas.fa-sign-out-alt
 
@@ -26,43 +28,58 @@ html(lang="en")
         h1#formHeading= language.heading_review_report_form
 
       .form
-        .col-md-6.field.project
+        .col-md-6.field.wrike-id
           .form-group.input-area
-            label(for="projectName")= language.label_wrike_id
-            input#projectName(type='text')(name="projectName" class="form-control"placeholder=language.wrike_id)
+            label(for="wrikeId")= language.label_wrike_id
+            input#wrikeId(type='number')(name="projectName" class="form-control" placeholder=language.wrike_id  required='')
               
           .error.error-txt= language.error_project_name
 
-        .col-md-6.field.bugsource
+        .col-md-6.field.task-name
           .form-group.input-area
-            label(for="bugSource")= language.label_task_name
-            input#bugSource(type='text')(name="bugSource" class="form-control" placeholder=language.task_name)
+            label(for="taskName")= language.label_task_name
+            input#taskName(type='text')(name="bugSource" class="form-control" placeholder=language.task_name pattern='[A-Za-z ]+' title='Please enter valid Name' required='')
               
           .error.error-txt= language.error_bug_source
 
-        .col-md-6.field.bugtype
+        .col-md-6.field.review-type(style='margin-top:10px')
           .form-group.input-area
-            label(for="bugType")= language.label_review_type
-            select#bugType(name="bugType" class="form-control" required)
+            label(style='margin-top:10px ;')(for="reviewType")= language.label_review_type
+            select#reviewType(name="reviewType" class="form-control" required)
               option(value="" selected disabled)=language.review_type
           .error.error-txt#bugterr= language.error_bug_type
 
-        .col-md-6.field.bugtype
+        .col-md-6.field.developer-name(style='margin-top:10px')
           .form-group.input-area
-            label(for="bugType")= language.label_developer_name
-            select#bugType(name="bugType" class="form-control" required)
+            label(style='margin-top:10px')(for="developerName")= language.label_developer_name
+            select#developerName(name="developerName" class="form-control" required)
               option(value="" selected disabled)=language.label_developer_name
           .error.error-txt#bugterr= language.error_bug_type
 
-        .col-md-12.field.bugdescription
+        
+        
+        .col-md-6.field.review-category(style='margin-top:10px')
+          .form-group.input-area
+            label(style='margin-top:10px')(for="reviewCategory")= language.label_review_category
+            select#reviewCategory(name="reviewCategory" class="form-control" required)
+              option(value="" selected disabled)=language.label_review_category
+          .error.error-txt#bugterr= language.error_bug_type
+
+        .col-md-6.field.project-name(style='margin-top:10px')
+          .form-group.input-area
+            label(style='margin-top:10px')(for="projectName")= language.label_project_name
+            select#projectName(name="projectName" class="form-control" required)
+              option(value="" selected disabled)=language.label_project_name
+          .error.error-txt#bugterr= language.error_bug_type
+        .col-md-12.field.review-point
           .form-group
-            label(for="bugDescription")= language.label_review_point
-            textarea#bugDescription(name="bugDescription" class="form-control" placeholder=language.placeholder_review_point rows="1" required)
+            label(style='padding-top:10px')(for="reviewPoint")= language.label_review_point
+            textarea#reviewPoint(name="reviewPoint" class="form-control" placeholder=language.placeholder_review_point rows="1" required)
           .error.error-txt#bugdeserror= language.error_bug_description
          
         #additional-review-points
-        button.btn.btn-add-row(type='button')
-            i.fa-solid.fa-plus=language.add_row
+        button.btn.btn-add-row(type='button' style='margin-left:15px')
+            i.fa-solid.fa-plus
         
 
        
@@ -72,13 +89,13 @@ html(lang="en")
         button(type="reset" id="resetBtn")= language.button_reset
         button(type="submit" id="submitBtn")= language.button_submit
         
-
+  
   script(src="https://code.jquery.com/jquery-3.5.1.min.js")
   link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css")
   script(src="https://cdn.jsdelivr.net/npm/toastify-js")
   script(src="https://cdn.jsdelivr.net/npm/sweetalert2@10")
   script(src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js")
-//-   script(src="./js/LoadInitialData.js")
+  script(src="./js/AddReview.js")
 //-   script(src="./js/GeneralFunc.js")
 //-   script(src="./js/AddBugBulkImport.js")
 //-   script(src="./js/AddBugInfo.js")
